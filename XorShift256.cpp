@@ -33,7 +33,7 @@ static uint64_t s[4]={23478234234,2342342345,234234121323,2234453453};
 
 double next(void) {
 	//const uint64_t result = s[0] + s[3];
-    const uint64_t result = ((s[0] + s[3])&0x000FFFFFFFFFFFFF)|0x3FE0000000000000;
+    const uint64_t result = ((s[0] + s[3])&0x000FFFFFFFFFFFFF)|0x3FF0000000000000;
 
 	const uint64_t t = s[1] << 17;
 
@@ -47,6 +47,7 @@ double next(void) {
 	s[3] = rotl(s[3], 45);
     double a;
     memcpy(&a,&result,8);
+	a-=1;
 	return a;
 }
 

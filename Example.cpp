@@ -62,13 +62,8 @@ int main(){
     int fi=0;
     for(int i=0;i<100000000;++i){
         double a  = next();
-        if(f!=a){
-            fi++;
-        }
-        else{
-            std::cout<<f<<" " << fi<<std::endl;
-            f=0.0;
-        }    }
+    }
+    
     time_req = clock() - time_req;
     std::cout<< "100 000 000 random numbers (XorShitft256) took "<<(float)time_req/CLOCKS_PER_SEC<<" Seconds"<<std::endl;
     
